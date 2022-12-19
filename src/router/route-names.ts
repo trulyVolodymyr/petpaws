@@ -6,6 +6,7 @@ import { galleryRoutesNames } from '@/views/gallery/gallery.routes'
 import { likesRoutesNames } from '@/views/likes/likes.routes'
 import { favoriteRoutesNames } from '@/views/favorite/favorite.routes'
 import { dislikeRoutesNames } from '@/views/dislike/dislike.routes'
+import { searchRoutesNames } from '@/views/search/search.routes'
 
 export const routeNames = {
   rootPage: 'rootPage',
@@ -15,6 +16,7 @@ export const routeNames = {
   ...galleryRoutesNames,
   ...likesRoutesNames,
   ...favoriteRoutesNames,
-  ...dislikeRoutesNames
+  ...dislikeRoutesNames,
+  ...searchRoutesNames
 
 }

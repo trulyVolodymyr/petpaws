@@ -46,7 +46,8 @@ import { breeds } from '@/breeds/breeds'
 const { $routeNames } = useGlobalProperties()
 
 const headerStore = useHeaderStore()
-const { inputSearch } = storeToRefs(headerStore)
+const { inputWord } = useHeaderStore()
+const { inputSearch, searchedBreeds } = storeToRefs(headerStore)
 
 const router = useRouter()
 
@@ -54,9 +55,12 @@ function searchInputResult () {
   const searchedBreed = breeds.filter(el => el.name.toLowerCase().includes(inputSearch.value.toLowerCase()))
 
   if (searchedBreed.length > 0) {
-    const id = searchedBreed[0].id
+    searchedBreeds.value.splice(0, searchedBreeds.value.length)
+    searchedBreed.forEach(el => searchedBreeds.value.push(el))
+    inputWord.splice(0, inputWord.length)
+    inputWord.push(inputSearch.value)
 
-    router.push({ name: $routeNames.breedsId, params: { id } })
+    router.push({ name: $routeNames.search })
     inputSearch.value = ''
   } else {
     alert(`Breed ${inputSearch.value} not found. Please enter correct breed name!`)

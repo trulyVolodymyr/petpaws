@@ -9,6 +9,7 @@ import { galleryRoutes } from '@/views/gallery/gallery.routes'
 import { likesRoutes } from '@/views/likes/likes.routes'
 import { favoriteRoutes } from '@/views/favorite/favorite.routes'
 import { dislikeRoutes } from '@/views/dislike/dislike.routes'
+import { searchRoutes } from '@/views/search/search.routes'
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -27,6 +28,7 @@ export const routes: Array<RouteRecordRaw> = [
   ...galleryRoutes,
   ...likesRoutes,
   ...favoriteRoutes,
-  ...dislikeRoutes
+  ...dislikeRoutes,
+  ...searchRoutes
 
 ]

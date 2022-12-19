@@ -4,6 +4,9 @@ export const useHeaderStore = defineStore('headerStore', () => {
   const likedBreeds = <IBreed[]>[]
   const favoriteBreeds = <IBreed[]>[]
   const dislikedBreeds = <IBreed[]>[]
+  const searchedBreeds = ref<IBreed[]>([])
+
+  const inputWord = <string[]>([])
 
   const inputSearch = ref<string>('')
 
@@ -22,6 +25,6 @@ export const useHeaderStore = defineStore('headerStore', () => {
   }
 
   return {
-    likedBreeds, favoriteBreeds, dislikedBreeds, inputSearch
+    likedBreeds, favoriteBreeds, dislikedBreeds, inputSearch, searchedBreeds, inputWord
   }
 })

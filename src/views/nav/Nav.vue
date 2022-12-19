@@ -6,7 +6,7 @@
       alt="Logo"
       @click="goHomeLink"
     >
-
+    <div @click="clear">vova</div>
     <h1
       class="text-[44px]  leading-[56px] text-black font-medium mb-2.5"
     >
@@ -33,6 +33,11 @@
 
 <script lang="ts" setup>
 import NavCard from '@/views/nav/NavCard.vue'
+
+function clear () {
+  localStorage.clear()
+  console.log(localStorage)
+}
 
 const router = useRouter()
 const { $routeNames } = useGlobalProperties()

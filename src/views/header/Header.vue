@@ -52,9 +52,17 @@ const router = useRouter()
 function searchInputResult () {
   const searchedBreed = breeds.filter(el => el.name.toLowerCase() === inputSearch.value.toLowerCase())
 
+  // sort by part of entered breed name
+  // but to implement this need create another component wich will be containig not one breed but array of breeds that matches entered word
+  //
+  // const searchedBreed2 = breeds.filter(el => el.name.toLowerCase().includes(inputSearch.value.toLowerCase()))
+
   if (searchedBreed.length > 0) {
     const id = searchedBreed[0].id
     router.push({ path: `breeds/${id}` })
+    inputSearch.value = ''
+  } else {
+    alert(`Breed ${inputSearch.value} not found. Please enter correct breed name!`)
     inputSearch.value = ''
   }
 }

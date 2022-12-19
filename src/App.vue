@@ -4,6 +4,7 @@
     <RouterView />
   </div>
 </template>
+
 <script setup lang="ts">
 import Nav from './views/nav/Nav.vue'
 </script>

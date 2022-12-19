@@ -6,9 +6,11 @@ export const useVotingStore = defineStore('votingStore', () => {
   function padTo2Digits (num: number) {
     return String(num).padStart(2, '0')
   }
-
-  const localLog = ref<ILog[]>(JSON.parse(localStorage.log))
-  localLog.value.forEach(el => userLog.value.push(el))
+  localStorage.setItem('log', '')
+  if (localStorage.log) {
+    const localLog = ref<ILog[]>(JSON.parse(localStorage.log))
+    localLog.value.forEach(el => userLog.value.push(el))
+  }
 
   return {
     userLog,

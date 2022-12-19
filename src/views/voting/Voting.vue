@@ -81,6 +81,12 @@ const { userLog, padTo2Digits } = useVotingStore()
 const currentImage = computed(() => {
   return breeds[counter.value].image.url
 })
+if (localStorage.length === 0) {
+  localStorage.setItem('liked', '[]')
+  localStorage.setItem('favorite', '[]')
+  localStorage.setItem('disliked', '[]')
+  localStorage.setItem('log', '[]')
+}
 
 function addBreedToCategory (actionType: string) {
   addUserActionsToLog(actionType)

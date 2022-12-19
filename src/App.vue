@@ -8,11 +8,4 @@
 
 <script setup lang="ts">
 import Nav from './views/nav/Nav.vue'
-if (localStorage.length === 0) {
-  localStorage.setItem('liked', '[]')
-  localStorage.setItem('favorite', '[]')
-  localStorage.setItem('disliked', '[]')
-  localStorage.setItem('log', '[]')
-}
-
 </script>

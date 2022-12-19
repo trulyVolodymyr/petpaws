@@ -141,9 +141,10 @@ function actionsHelper (actionTime: string, actionType: string, actionImgId: str
     svg: actionSvg
   })
 }
-onUnmounted(() => {
+onUpdated(() => {
   localStorage.setItem('log', JSON.stringify(userLog))
 })
+
 </script>
 
 <style lang="scss">

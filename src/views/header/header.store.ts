@@ -7,20 +7,16 @@ export const useHeaderStore = defineStore('headerStore', () => {
 
   const inputSearch = ref<string>('')
 
-  localStorage.setItem('liked', '')
-  localStorage.setItem('favorite', '')
-  localStorage.setItem('disliked', '')
-
-  if (localStorage.liked) {
+  if (localStorage.length) {
     const localLiked = ref<IBreed[]>(JSON.parse(localStorage.liked))
     localLiked.value.forEach(el => likedBreeds.push(el))
   }
 
-  if (localStorage.favorite) {
+  if (localStorage.length) {
     const localFavorite = ref<IBreed[]>(JSON.parse(localStorage.favorite))
     localFavorite.value.forEach(el => favoriteBreeds.push(el))
   }
-  if (localStorage.disliked) {
+  if (localStorage.length) {
     const localDisliked = ref<IBreed[]>(JSON.parse(localStorage.disliked))
     localDisliked.value.forEach(el => dislikedBreeds.push(el))
   }

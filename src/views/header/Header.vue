@@ -54,7 +54,6 @@ function searchInputResult () {
   const searchedBreed = breeds.filter(el => el.name.toLowerCase().includes(inputSearch.value.toLowerCase()))
 
   if (searchedBreed.length > 0) {
-    console.log(searchedBreed)
     const id = searchedBreed[0].id
 
     router.push({ name: $routeNames.breedsId, params: { id } })

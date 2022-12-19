@@ -69,7 +69,7 @@
 <script lang="ts" setup>
 import Header from '@/views/header/Header.vue'
 import BackButton from '@/components/BackButton.vue'
-import { breeds } from '@/breeds/breeds'
+import { breeds, type IBreed } from '@/breeds/breeds'
 import { useHeaderStore, useVotingStore } from '@/store'
 
 const { likedBreeds, favoriteBreeds, dislikedBreeds } = useHeaderStore()
@@ -85,31 +85,34 @@ const currentImage = computed(() => {
 function addBreedToCategory (actionType: string) {
   addUserActionsToLog(actionType)
   if (actionType === 'like') {
-    if (likedBreeds.includes(breeds[counter.value])) {
-      return
+    if (likedBreeds.includes(breeds[counter.value]) || JSON.parse(localStorage.liked)
+      .some((el: IBreed) => el.id === breeds[counter.value].id)) {
+      counter.value++
     } else {
       likedBreeds.push(breeds[counter.value])
       localStorage.setItem('liked', JSON.stringify(likedBreeds))
+      counter.value++
     }
   }
   if (actionType === 'fav') {
-    if (favoriteBreeds.includes(breeds[counter.value])) {
-      return
+    if (favoriteBreeds.includes(breeds[counter.value]) || JSON.parse(localStorage.favorite)
+      .some((el: IBreed) => el.id === breeds[counter.value].id)) {
+      counter.value++
     } else {
       favoriteBreeds.push(breeds[counter.value])
       localStorage.setItem('favorite', JSON.stringify(favoriteBreeds))
+      counter.value++
     }
   }
   if (actionType === 'dis') {
-    if (dislikedBreeds.includes(breeds[counter.value])) {
-      return
+    if (dislikedBreeds.includes(breeds[counter.value]) || JSON.parse(localStorage.disliked)
+      .some((el: IBreed) => el.id === breeds[counter.value].id)) {
+      counter.value++
     } else {
       dislikedBreeds.push(breeds[counter.value])
       localStorage.setItem('disliked', JSON.stringify(dislikedBreeds))
+      counter.value++
     }
-  }
-  if (counter.value + 1 < breeds.length) {
-    counter.value++
   }
 }
 

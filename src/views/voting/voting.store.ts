@@ -1,3 +1,4 @@
+import { breeds, type IBreed } from '@/breeds/breeds'
 
 export const useVotingStore = defineStore('votingStore', () => {
   const userLog = ref<ILog[]>([])
@@ -10,9 +11,12 @@ export const useVotingStore = defineStore('votingStore', () => {
   const localLog = ref<ILog[]>(JSON.parse(localStorage.log))
   localLog.value.forEach(el => userLog.value.push(el))
 
+  console.log(JSON.parse(localStorage.liked).some((el: IBreed) => el.id === breeds[0].id))
+
   return {
     userLog,
     counter,
     padTo2Digits
+
   }
 })

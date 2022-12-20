@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[30px] mr-[30px] ml-[auto]">
+  <div class="mt-[30px] mr-[30px] ml-[auto]  max-w-[680px]">
     <Header />
     <div class="mt-[10px] bg-white rounded-[20px] p-5 ">
       <div class="flex mb-[15px]">

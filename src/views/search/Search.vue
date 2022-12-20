@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-[30px] mr-[30px] ml-[auto]"
+    class="mt-[30px] mr-[30px] ml-[auto] max-w-[680px]"
   >
     <Header />
 

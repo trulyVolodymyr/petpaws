@@ -1,6 +1,6 @@
 <template>
-  <div class="home h-[100%] ml-[auto] mb-[20px]">
-    <div class="w-[680px] h-[840px] bg-red-300 rounded-[20px] relative z-[-1] ml-[137px] mr-[30px] mt-[30px]" />
+  <div class="home h-[100%] ml-[auto] mb-[20px] ">
+    <div class="w-[680px] h-[840px] bg-red-300 ml-[137px] rounded-[20px] relative z-[-1] mr-[30px] mt-[30px]" />
   </div>
 </template>
 
